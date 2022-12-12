@@ -1,9 +1,9 @@
 #include <cassert>
-#include <fstream>
-#include <vector>
-#include <range/v3/view/enumerate.hpp>
+#include "range/v3/view/enumerate.hpp"
 
 #include "aoc.hpp"
+
+import std.core;
 
 namespace aoc
 {
@@ -21,7 +21,7 @@ namespace aoc
 		return line;
 	}
 
-	Answer Solve(const std::string& input)
+	Answer Solve(const std::string& input, int marker_size)
 	{
 		for (std::vector<char> stack; auto [pos, value] : input | ranges::views::enumerate)
 		{
@@ -29,7 +29,7 @@ namespace aoc
 			if (found == stack.end())
 			{
 				stack.push_back(value);
-				if (stack.size() == 4)
+				if (stack.size() == marker_size)
 				{
 					return {
 						pos + 1,	// +1 porque en el problema el índice empieza en 1

@@ -14,9 +14,9 @@ TEST_CASE("Test AOC 06b")
 	SECTION("Test answer")
 	{
 		std::string input = aoc::GetInput(AOC_INPUT_FILEPATH);
-		auto [pos, mark] = aoc::Solve(input);
+		auto [position, marker] = aoc::Solve(input, 14);
 
-		REQUIRE(pos == 19);
-		REQUIRE(mark == "qmgbljsphdztnv");
+		REQUIRE(position == 19);
+		REQUIRE(marker == "qmgbljsphdztnv");
 	}
 }
