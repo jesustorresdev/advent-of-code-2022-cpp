@@ -12,3 +12,10 @@ endif()
 find_package(catch2 CONFIG REQUIRED)
 find_package(fmt CONFIG REQUIRED)
 find_package(range-v3 CONFIG REQUIRED)
+
+include(CTest)
+include(Catch)
+
+add_subdirectory(aoc_06a)
+#add_subdirectory(aoc_06a-modules)
+add_subdirectory(aoc_06b)
